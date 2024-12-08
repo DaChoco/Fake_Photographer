@@ -3,11 +3,18 @@
 :root{
     --base-color: #ffffff;
     --text-color: #373535; 
-    --searchIcons: #e4dee0;
+    --searchIcons: #e9ecf0;
 }
 
 body{
     background-color: var(--base-color);
+}
+
+#Portfolio{
+    background-color: var(--searchIcons);
+    width: 100%;
+    
+    
 }
 
 .navbar-container{
@@ -60,7 +67,7 @@ p.normal-text{
 .contact-container{
     width: min(1000px, 100%);
     font-family: 'Roboto';
-    justify-items: center;
+    justify-self: center;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -105,21 +112,12 @@ ul{
         width: 0%;
     }
     .navbar-links:hover::after{
-        animation: underexpand 0.5s;
+        animation: underexpand 0.5s ease;
+        animation-fill-mode: forwards;
     }
 li:hover{
     border-radius: 0.5rem;
     
-}
-.search-bar{
-    width: 60vw;
-    margin-top: 1rem;
-    background-color: var(--searchIcons);
-    color: var(--text-color);
-    font-family: 'Roboto';
-    border-radius: 1rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
 }
 
 .layout-container{
@@ -130,7 +128,6 @@ li:hover{
     transition: 0.5s;
     column-gap: 1em;
 }
-
 
 .my-img{
     border-radius: 1.5rem;
@@ -148,9 +145,9 @@ img{
 }
 
 @keyframes underexpand {
-    from {width: 0%}
+    0% {width: 0%}
 
-    to {width: 100%}
+    100% {width: 100%}
 }
 
 @media only screen and (max-width: 600px){
@@ -171,4 +168,26 @@ img{
         display: none;
     }
 
+}
+
+@media only screen and (min-width: 1980px){
+    .layout-container{
+        width: min(1400px, 100%);
+        columns: 5 200px;
+    }
+    .my-img{
+        width: 200px;
+    }
+    .text-container{
+        width: min(1400px, 100%);
+    }
+    .contact-container{
+        width: min(1400px, 100%);
+    }
+    li{
+        font-size: 22px;
+    }
+    .logo-container{
+        font-size: 22px;
+    }
 }
