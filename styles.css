@@ -3,11 +3,13 @@
 :root{
     --base-color: #ffffff;
     --text-color: #373535; 
+    --dark-hero: #2d2e31;
     --searchIcons: #e9ecf0;
 }
 
 body{
     background-color: var(--base-color);
+    margin: 0;
 }
 
 #Portfolio{
@@ -74,7 +76,7 @@ p.normal-text{
 }
 
 .logo-container{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins';
     position: absolute;
     display: flex;
     flex-direction: row;
@@ -88,8 +90,60 @@ ul{
     
 }
 
+.hero-container{
+    padding-top: 5vh;
+    
+    color: var(--base-color);
+    
+    width: min(1100px, 100%);
+    height: max-content;
+    padding-bottom: 1rem;
+    margin: 0 auto;
+    
+    display: grid;
+    grid-template-areas: 'Photo Photo Para';
+    gap: 20px;
+    
+}
 
+.hero-container h4{
+    font-family: 'EB Garamond';
+    margin: 0;
+    grid-area: Para;
+}
 
+.hero-container h2{
+    font-family: 'Poppins';
+    font-size: 36px;
+    margin: 0;
+    grid-area: Para;
+}
+
+.hero-container p{
+    grid-area: Para;
+
+}
+.hero-photo{
+    grid-area: Photo;
+    width: 100%;
+    margin: 0;
+    border-radius: 1em;
+    
+}
+
+button{
+    width: max-content;
+    grid-area: Para;
+}
+header{
+    height: max-content;
+    width: 100%;
+    padding-top: 10vh;
+    background-color: var(--dark-hero);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
 .navbar-links{
     color: var(--text-color);
     font-family: 'Roboto';
