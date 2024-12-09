@@ -7,14 +7,18 @@
     --searchIcons: #e9ecf0;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     background-color: var(--base-color);
     margin: 0;
+    transition: 0.2s;
 }
 
 #Portfolio{
     background-color: var(--searchIcons);
-    width: 100%;
     
     
 }
@@ -44,6 +48,9 @@ body{
         'main main photo photo';
     gap: 10px;
     height: max-content;
+    position: relative;
+    left: -100%;
+
 }
 
 .text-container h1{
@@ -70,11 +77,13 @@ p.normal-text{
 
 .contact-container{
     width: min(1000px, 100%);
+    left: -100%;
     font-family: 'Roboto';
     justify-self: center;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .fa-brands{
@@ -184,8 +193,13 @@ button:hover{
 
 }
 
+a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+
 header{
-    height: max-content;
+    padding-bottom: 10vh;
     width: 100%;
     padding-top: 10vh;
     background-color: var(--dark-hero);
@@ -202,7 +216,9 @@ header{
     width: max-content;
 
 }
-
+.activated{
+    animation: sliding 0.8s ease-in-out forwards;
+}
 .navbar-links h3{
     margin-bottom: 0rem;
 }
@@ -212,7 +228,7 @@ header{
         position: absolute;
         background-color: var(--text-color);
         height: 5px;
-        width: 0%;
+        width: var(--after-width, 0%);
     }
     .navbar-links:hover::after{
         animation: underexpand 0.5s ease;
@@ -221,6 +237,11 @@ header{
 li:hover{
     border-radius: 0.5rem;
     
+}
+
+section{
+    height: max-content;
+    padding: 10vh 0;
 }
 
 .layout-container{
@@ -255,6 +276,16 @@ img{
     0% {width: 0%}
 
     100% {width: 100%}
+}
+
+@keyframes sliding {
+    0% 
+        {left: -100%; 
+        opacity: 0;}
+
+    100% 
+        {left: 0%;
+        opacity: 100%;}
 }
 
 @media only screen and (max-width: 600px){
