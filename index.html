@@ -6,18 +6,20 @@
     <title>Gallery</title>
     <link rel="stylesheet" href="styles.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/dad52afab5.js" crossorigin="anonymous"></script>
+    <script defer src="/app.js"></script>
 </head>
 <body>
 
-    <header>
+    <header id="hero">
         <div class="hero-container">
             <img src="https://i.pinimg.com/1200x/39/6e/ab/396eabddaacec52153ff1883491e97a6.jpg" alt="" class="hero-photo">
 
-            <div>
+            <div class="text-area">
                 <h4>Salutations</h4>
                 <h2>Professional Photographer at your service!</h2>
                 <p>Cause if I didn't do it, who would?</p>
-                <button>Contact me</button>
+                <button type="button">Contact me</button>
 
             </div>
             
@@ -32,12 +34,16 @@
             <div class="logo-container">
                 <h1>Lensgraph</h1>
             </div>
-
             <ul>
-                <li class="navbar-links"><h3>Home</h3></li>
-                <li class="navbar-links"><h3>About Me</h3></li>
-                <li class="navbar-links"><h3>Portfolio</h3></li>
-                <li class="navbar-links"><h3>Contact Me</h3></li>  
+                <li class="navbar-links" id="home-page"><h3>Home</h3></li>
+                <li class="navbar-links" id="about-page"><h3>About Me</h3></li>
+                <li class="navbar-links" id="portfolio-page"><h3>Portfolio</h3></li>
+                <li class="navbar-links" id="contact-page"><h3>Contact Me</h3></li>  
+            </ul>
+            <ul class="social-container">
+                <li><i class="fa-brands fa-instagram fa-2x"></i></li>
+                <li><i class="fa-brands fa-youtube fa-2x"></i></li>
+                <li><i class="fa-brands fa-x-twitter fa-2x"></i></li>
             </ul>
             
         </nav>
@@ -85,7 +91,10 @@
                 <p class="normal-text">Totallynotme@Lensgraph.com</p>
                 <p class="normal-text">(012) 535 1234</p>
                 <strong><h4>Cape Town</h4></strong>
-                <p class="normal-text">24 Harfield Rd, Claremont</p>
+                <p class="normal-text">24 Harfield Rd</p>
+                <p class="normal-text">Claremont</p>
+                <p class="normal-text">Cape Town</p>
+                <p class="normal-text">Western Cape</p>
             </div>
 
         </section>
