@@ -4,7 +4,18 @@
     --base-color: #ffffff;
     --text-color: #373535; 
     --dark-hero: #2d2e31;
+    --hero-text: #cedced;
     --searchIcons: #e9ecf0;
+    --nav-color: #ffffff;
+}
+
+.darkmode{
+    --base-color: #2a2a2b;
+    --text-color: #e3f5f0;
+    --dark-hero: #212123;
+    --hero-text: #f5f7f8;
+    --searchIcons: #363637;
+    --nav-color: #1c1b1c;
 }
 
 html{
@@ -32,7 +43,7 @@ body{
     position: fixed;
     display: flex;
     justify-content: space-between;
-    background-color: #FFFFFF;
+    background-color: var(--nav-color);
     z-index: 500;
 }
 
@@ -84,14 +95,20 @@ p.normal-text{
     display: flex;
     flex-direction: column;
     position: relative;
+    color: var(--text-color);
 }
 
 .fa-brands{
     color: var(--text-color);
 }
 
+#light-dark{
+    margin: 1.2rem 0;
+    margin-right: 1rem;
+}
 .logo-container{
     font-family: 'Poppins';
+    color: var(--text-color);
     
     display: flex;
     flex-direction: row;
@@ -139,6 +156,7 @@ ul.social-container li{
 
 .text-area{
     grid-area: Para;
+    color: var(--hero-text);
 }
 
 .hero-container h4{

@@ -2,10 +2,18 @@ const home = document.getElementById('home-page');
 const about = document.getElementById('about-page');
 const portfolio = document.getElementById('portfolio-page');
 
+const body = document.querySelector('body');
+
+let dark = false; //false means dark
+
+const lightdarktoggle = document.getElementById('light-dark')
+
 
 const homeSect = document.getElementById('hero');
 const aboutSect = document.getElementById('About-me')
 const portSect = document.getElementById('Portfolio')
+
+//--------------------------------------------------------
 
 
 document.addEventListener('DOMContentLoaded', function(){
@@ -52,3 +60,30 @@ document.addEventListener('DOMContentLoaded', function(){
 
     });
 })
+
+function switchIcons(){
+
+    if (dark == false){
+        lightdarktoggle.classList.remove('fa-regular');
+        lightdarktoggle.classList.add('fa-solid');
+        body.classList.add('darkmode');
+
+        lightdarktoggle.style.scale = '1.1';
+        dark = true;
+
+        localStorage.setItem('darkmode?', 'true');
+    }
+    else{
+        lightdarktoggle.classList.remove('fa-solid');
+        lightdarktoggle.classList.add('fa-regular');
+        body.classList.remove('darkmode');
+        dark = false;
+
+        localStorage.setItem('darkmode?', 'false');
+    }
+    
+}
+
+lightdarktoggle.addEventListener('click', switchIcons);
+
+
