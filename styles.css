@@ -7,6 +7,9 @@
     --hero-text: #cedced;
     --searchIcons: #e9ecf0;
     --nav-color: #ffffff;
+
+    --blue-highlight-main: #234691;
+    --blue-highlight-secondary: #3f7ff7;
 }
 
 .darkmode{
@@ -143,7 +146,7 @@ ul.social-container li{
     
     color: var(--base-color);
     
-    width: min(1000px, 100%);
+    width: min(1100px, 100%);
     height: max-content;
     padding-bottom: 1rem;
     margin: 0 auto;
@@ -152,6 +155,21 @@ ul.social-container li{
     grid-template-areas: 'Photo Photo Para';
     gap: 20px;
     
+}
+
+#footercontact{
+    flex-direction: row;
+    row-gap: 10px;
+    column-gap: 1rem;
+}
+
+.region-container{
+    display: flex;
+    flex-direction: column;
+    min-width: 10rem;
+}
+#footer{
+    background-color: var(--searchIcons);
 }
 
 .text-area{
@@ -188,26 +206,38 @@ ul.social-container li{
 button{
     width: max-content;
     font-size: 22px;
-    padding: 1rem;
-    background-color: var(--text-color);
+    padding: 2rem 1em;
+    background-color: var(--blue-highlight-main);
     margin-bottom: 1em;
-    color: var(--base-color);
-    border-width: 5px;
-    border-color: var(--base-color);
+    color: white;
+    border-width: 0px;
+    
     position: relative;
     border-radius: 0.3rem;
     transition: 0.25s ease-in-out;
     display: flex;
-    z-index: 10;
+    z-index: 0;
     justify-content: center;
     align-items: center;
-    overflow: visible; 
+    overflow: hidden; 
     
 }
 
+button::before{
+    content: '';
+    position: absolute;
+   
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    border-radius: 0.3rem;
+    background-color: var(--dark-hero);
+    z-index: -1;
+
+}
+
 button:hover{
-    background-color: var(--base-color);
-    color: var(--text-color);
+    background: var(--blue-highlight-secondary);
+    color: var(--blue-highlight-secondary);
 
 }
 
@@ -244,7 +274,8 @@ header{
     .navbar-links::after{
         content: ' ';
         position: absolute;
-        background-color: var(--text-color);
+        background-color: var(--blue-highlight-secondary);
+        
         height: 5px;
         width: var(--after-width, 0%);
     }

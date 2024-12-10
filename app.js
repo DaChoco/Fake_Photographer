@@ -15,6 +15,33 @@ const portSect = document.getElementById('Portfolio')
 
 //--------------------------------------------------------
 
+function switchIcons(){
+
+    if (dark == false){
+        lightdarktoggle.classList.remove('fa-regular');
+        lightdarktoggle.classList.add('fa-solid');
+        body.classList.add('darkmode');
+
+        lightdarktoggle.style.scale = '1.1';
+        dark = true;
+
+        localStorage.setItem('darkmode?', 'true');
+    }
+    else{
+        lightdarktoggle.classList.remove('fa-solid');
+        lightdarktoggle.classList.add('fa-regular');
+        body.classList.remove('darkmode');
+        dark = false;
+
+        localStorage.setItem('darkmode?', 'false');
+
+        let tester = localStorage.getItem('darkmode?')
+        console.log(tester);
+    }
+    
+}
+
+
 
 document.addEventListener('DOMContentLoaded', function(){
     window.addEventListener('scroll', ()=>{
@@ -61,29 +88,27 @@ document.addEventListener('DOMContentLoaded', function(){
     });
 })
 
-function switchIcons(){
 
-    if (dark == false){
+
+lightdarktoggle.addEventListener('click', switchIcons);
+
+window.onload = function(){
+    darkString = localStorage.getItem('darkmode?');
+    console.log(darkString);
+
+   
+    dark = (darkString === "true") ;
+    
+    if (dark == true) {
+        // If dark mode is already on, we only need to make sure the page reflects that state
         lightdarktoggle.classList.remove('fa-regular');
         lightdarktoggle.classList.add('fa-solid');
         body.classList.add('darkmode');
-
         lightdarktoggle.style.scale = '1.1';
-        dark = true;
-
-        localStorage.setItem('darkmode?', 'true');
-    }
-    else{
-        lightdarktoggle.classList.remove('fa-solid');
-        lightdarktoggle.classList.add('fa-regular');
-        body.classList.remove('darkmode');
-        dark = false;
-
-        localStorage.setItem('darkmode?', 'false');
     }
     
+    
+    
 }
-
-lightdarktoggle.addEventListener('click', switchIcons);
 
 
