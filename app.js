@@ -111,6 +111,20 @@ window.onload = function(){
         body.classList.add('darkmode');
         lightdarktoggle.style.scale = '1.1';
     } 
+
+    dropString = sessionStorage.getItem('dropped?')
+
+    dropopen = (dropString === "true")
+
+    if (dropopen == true){
+        //if menu is already down only make sure the page reflects that
+        navbar.style.height = 'max-content';
+        dropdown.style.display = 'flex';
+        dropdown.style.backgroundColor = '--base-color'
+        menubutton.classList.remove('fa-bars')
+        menubutton.classList.add('fa-x')
+
+    }
 }
 
 function dropdownMenu(){
