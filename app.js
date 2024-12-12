@@ -5,8 +5,13 @@ const portfolio = document.getElementById('portfolio-page');
 const body = document.querySelector('body');
 
 let dark = false; //false means dark
+let dropopen = false; //false means no drop down
 
 const lightdarktoggle = document.getElementById('light-dark')
+const dropdown = document.getElementById('links')
+const navbar = document.getElementById('top-bar');
+
+const menubutton = document.getElementById('menu-button')
 
 
 const homeSect = document.getElementById('hero');
@@ -105,10 +110,33 @@ window.onload = function(){
         lightdarktoggle.classList.add('fa-solid');
         body.classList.add('darkmode');
         lightdarktoggle.style.scale = '1.1';
-    }
-    
-    
-    
+    } 
 }
+
+function dropdownMenu(){
+    
+    if (dropopen == false){
+        dropdown.style.display = 'flex';
+        navbar.style.height = 'max-content'
+        dropdown.style.backgroundColor = '--base-color'
+        menubutton.classList.remove('fa-bars')
+        menubutton.classList.add('fa-x')
+
+        dropopen = true;
+        sessionStorage.setItem('dropped?', 'true');
+
+    }
+    else{ // if true
+        dropdown.style.display = 'none';
+        menubutton.classList.remove('fa-x')
+        menubutton.classList.add('fa-bars')
+        
+        navbar.style.height = '10vh';
+        dropopen = false;
+        sessionStorage.setItem('dropped?', 'false');
+    }
+}
+
+menubutton.addEventListener('click', dropdownMenu)
 
 

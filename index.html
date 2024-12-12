@@ -7,27 +7,35 @@
     <link rel="stylesheet" href="styles.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/dad52afab5.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0&icon_names=menu" />
     <script defer src="/app.js"></script>
 </head>
 <body>
     <!--Nav bar starts-->
-    <nav class="navbar-container">
+    <nav class="navbar-container" id="top-bar" >
 
         <div class="logo-container">
             <i class="fa-regular fa-sun fa-2x" id="light-dark"></i>
             <h1>Lensgraph</h1>
         </div>
-        <ul>
+        
+        <ul id="links">
             <li class="navbar-links" id="home-page"><a href="#hero"><h3>Home</h3></a></li>
             <li class="navbar-links" id="about-page"><a href="#About-me"><h3>About Me</h3></a></li>
             <li class="navbar-links" id="portfolio-page"><a href="#Portfolio"><h3>Portfolio</h3></a></li>
             <li class="navbar-links" id="contact-page"><a href="#Contact"><h3>Contact Me</h3></a></li>  
+            
         </ul>
+        <li><i id="menu-button" class="my-menu-icon fa-solid fa-bars fa-2x"></i></li>
         <ul class="social-container">
             <li><i class="fa-brands fa-instagram fa-2x"></i></li>
             <li><i class="fa-brands fa-youtube fa-2x"></i></li>
             <li><i class="fa-brands fa-x-twitter fa-2x"></i></li>
         </ul>
+        
+    
+        
         
     </nav>
     <!--Nav bar ends-->

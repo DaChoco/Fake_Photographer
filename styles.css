@@ -28,6 +28,7 @@ html{
 body{
     background-color: var(--base-color);
     margin: 0;
+    width: 100%;
     transition: 0.2s;
 }
 
@@ -38,16 +39,18 @@ body{
 }
 
 .navbar-container{
-    width: 100vw;
+    width: 100%;
     height: 10vh;
     margin: 0;
     padding-bottom: 1vh;
     top: 0;
+    right: 0;
     position: fixed;
     display: flex;
     justify-content: space-between;
     background-color: var(--nav-color);
     z-index: 500;
+    overflow: visible;
 }
 
 .text-container{
@@ -63,7 +66,7 @@ body{
     gap: 10px;
     height: max-content;
     position: relative;
-    left: -100%;
+    left: -120%;
 
 }
 
@@ -291,6 +294,19 @@ li:hover{
 section{
     height: max-content;
     padding: 10vh 0;
+    width: 100%;
+}
+
+.my-menu-icon{
+    margin: auto 0;;
+    position: fixed;
+    right: 0;
+    color: var(--text-color);
+
+    z-index: 10;
+    display: none;
+    visibility: hidden;
+    
 }
 
 .layout-container{
@@ -299,7 +315,7 @@ section{
     margin: 0 auto;
     width: min(1000px, 100%);
     transition: 0.5s;
-    column-gap: 1em;
+    column-gap: 1rem;
 }
 
 .my-img{
@@ -338,10 +354,45 @@ img{
 }
 
 @media only screen and (max-width: 600px){
+    html{
+        margin: 0;
+    }
+
+    .my-menu-icon{
+        display: block;
+        margin: auto;
+        visibility: visible;
+        padding: 2rem;
+        margin-right: 0.5rem;
+        
+    }
     .layout-container{
+        margin: 0;
         justify-items: center;
+   
         columns: 2 100px;
         padding-top: 10vh;
+        
+    }
+    .logo-container{
+        margin: auto 0;
+    }
+    ul.social-container{
+        display: none;
+    }
+
+    .contact-container{
+        margin-left: 1rem;
+    }
+    .text-container{
+        margin: 0 auto;
+
+        grid-template-areas: 
+            'header'
+            'photo'
+            'main';
+
+        font-size: 1rem;
     }
 
     .navbar-container{
@@ -351,9 +402,18 @@ img{
         width: 200px;
     }
 
-    ul .navbar-links, ul .search-bar{
+    #links{
+        flex-direction: column;
         display: none;
+        position: fixed;
+        margin-top: 5rem;
+        margin-right: auto;
+        padding: 2rem;
+        background-color: var(--base-color);
+        z-index: 1000;
+        right: 0;
     }
+
 
 }
 
@@ -361,6 +421,8 @@ img{
     .layout-container{
         width: min(1400px, 100%);
         columns: 5 200px;
+        column-gap: 0.2rem;
+        row-gap: 0.5rem;
     }
     .my-img{
         width: 200px;
@@ -376,5 +438,9 @@ img{
     }
     .logo-container{
         font-size: 22px;
+        
+    }
+    ul.social-container{
+        margin: auto 0;
     }
 }
